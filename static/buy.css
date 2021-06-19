@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Limelight&family=Mate+SC&family=Pattaya&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bitter:ital@1&family=Fredoka+One&family=Nunito+Sans:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.nav{
+    top: 0;
+}
+.nav .shopping-cart{
+    position: relative;
+    left: 40%;
+    top: 20%;
+    color: green;
+    cursor: pointer;
+}
+.nav h1::before{
+    content: attr(data-count);
+    /* content: "1"; */
+    position: absolute;
+    color: white;
+    right: 4px;
+    font-size: 15px;
+    text-align: center;
+    top: -3px;
+    width: 20px;
+    height: 20px;
+    background: red;
+    border-radius: 50%;
+    opacity: 0;
+    z-index: 1;
+}
+.nav h1.zero:before{
+    opacity: 1;
+}
+
+/* CATEGORY OF PLANTS */
+.category-of-plants{
+    margin-top: 70px;
+    background-color: green;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+.category-of-plants details{
+    position: relative;
+    z-index: 1;
+}
+.category-of-plants summary{
+    width: 100px;
+    margin: auto;  
+    cursor: pointer;  
+    color: green
+}
+details > summary {
+    list-style: none;
+}
+.category-of-plants .plate{
+    width: 10px;
+    position: fixed;
+    top: 45px;
+    font-family: 'Pattaya', sans-serif;
+    letter-spacing: 2px;
+    margin: auto;
+    font-size: 20px;
+}
+.category-of-plants p{
+    width: 250px;
+}
+.category-of-plants .plate:hover{
+    color: rgb(2, 180, 2);
+}
+.category-of-plants ul{
+    height:30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.category-of-plants ul li{
+    font-family: 'Limelight', cursive;
+    color: white;
+    margin: 25px;
+}
+.category-of-plants ul li:hover{
+    color: yellow;
+}
+.category-of-plants .active{
+    color: yellow;
+}
+.category-of-plants .active:hover{
+    color: yellow;
+}
+#triangle{
+    width: 10px;
+    height: 10px;
+    margin: auto;
+    margin-left:75px;
+    margin-top: -6px;
+    border-left: 2px solid green;
+    border-bottom: 2px solid green;
+    transform: rotate(-45deg);
+}
+.triangle2{
+    width: 10px;
+    height: 10px;
+    margin: auto;
+    margin-left: 75px;
+    margin-top: 46px;
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+    transform: rotate(134deg);
+}
+
+/* ALL */
+.all{
+    display: flex;
+    flex-direction: row;
+}
+
+/* FILTER SECTION */
+.filter{
+    margin-top: 7%;
+    margin-left: 1.5%;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+}
+.filter h1{
+    font-family: 'Pattaya', sans-serif;
+    letter-spacing: 2px;
+}
+.filter .button{
+    width: 95%;
+    padding: 5px;
+    cursor: pointer;
+    background-color: white;
+    border: 2px solid green;
+    /* border-color: white; */
+    outline: none;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+}
+/* .filter .button:hover{
+    background-color: rgb(176, 255, 176);
+} */
+.filter #for-price-filter-low-to-high{
+    margin-top: 6%;
+}
+.filter #for-price-filter-high-to-low{
+    margin-top: 6%;
+}
+.filter #for-rating-filter{
+    margin-top: 6%;
+}
+
+/* GRID SECTION */
+.grid{
+    margin-top: 7%;
+    margin-left: 25%;
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
+    grid-template-rows: repeat(auto,13);
+    justify-content: center;
+    align-items: center;
+    grid-gap: 5px;
+}
+.grid .item{
+    /* display: inline-block; */
+    width: 300px;
+    height: 410px;
+    border: 0.5px solid gray;
+    margin: 10px 1px;
+    padding: 10px;
+    cursor: pointer;
+    box-shadow: 3px 3px 5px grey;
+}
+.grid .item:hover{
+    transform: scale(1.005);
+}
+.grid .item img{
+    display: inline-block;
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+}
+.grid .name{
+    padding: 5px;
+    display: inline-block;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 900;
+}
+.grid .in{
+    padding: 5px;
+    color: green;
+    font-family: 'Anton', sans-serif;
+    font-size: 25px;
+    letter-spacing: 2px;
+    font-weight: 900;
+}
+.grid .inn{
+    padding: 5px;
+    line-height: 15px;
+    font-family: 'Bitter', serif;
+    font-weight: 900;
+}
+.grid #rating{
+    color: brown;
+}
+.grid .category{
+    float: left;
+    margin-top: 5px;
+    margin-left: 5px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: bolder;
+}
+.grid .type{
+    color: green;
+}
+.grid .btns{
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    top: 15px;
+    justify-content: space-between;
+    align-items: center;
+}
+.grid .btn{
+    cursor: pointer;
+    font-family: 'Fredoka One', cursive;
+    font-size: 17px;
+    margin: 5px;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.grid #quick{
+    background-color: rgb(255, 106, 0);
+}
+.grid #cart{
+    background: lightgreen;
+}
+.grid #quick:hover{
+    background-color: rgb(255, 125, 31);
+}
+.grid #cart:hover{
+    background: rgb(166, 255, 166);
+}
+
+
+/* SELECT CLASS */
+.select{
+    width: 60%;
+    height: 580px;
+    background: #222;
+    position: absolute;
+    top: -1000px;
+    left: 20%;
+    transition: 0.5s;
+    overflow-y: auto;
+    margin: auto;
+}
+.select.display{
+    top: 10px;
+}
+.select div{
+    width: 100%;
+    height:200px;
+    display: flex;
+    padding: 5px;
+    border: 1px solid white;
+    position: relative;
+    margin: 5px auto;
+}
+.select div img{
+    width: 300px;
+    height: 100%;
+}
+.select div p{
+    padding: 35px;
+    color: white;
+}
+.select div h6, .select div button{
+    position: absolute;
+    left: 45%;
+    top:50%;
+    color: white;
+}
+.select div button{
+    left: 45%;
+    top: 50%;
+}
+.select div span{
+    display: none;
+}

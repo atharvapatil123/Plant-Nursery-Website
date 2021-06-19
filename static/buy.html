@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="buy.css">
+    <script src="https://kit.fontawesome.com/8fa13c1d54.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <nav class="nav">
+        <ul>
+            <img src="leaflogo.jpg" alt="">
+            <a href="/" style="text-decoration: none;"><li id="element1" class="navi active">Home</li></a>
+            <li id="element">Services</li>
+            <a href="/aboutus.html" style="text-decoration: none;"><li id="element"  class="navi">About Us</li></a>
+            <a href="/contact.html" style="text-decoration: none;"><li id="element"  class="navi">Contact Us</li></a>
+            <a href="/login.html"><li id="element" class="logout">Logout</li></a>
+            <a class="shopping-cart" href="addtocart.html">
+                <h1 id="add_to_cart_button">
+                    <i class="fa fa-shopping-cart" style="text-decoration: none;"></i>
+                </h1>
+            </a>
+        </ul>
+    </nav>
+
+        <!--CATEGORY OF PLANTS  -->
+    <div class="category-of-plants">
+        <details id="detail">
+            <summary>
+                <div class="plate" id="plate">
+                    <p>Filter by category</p>
+                    <div class="triangle1" id="triangle"></div>
+                </div>
+            </summary>
+            <ul>
+                <li class="category-of-plants-filter active" id="All">All</li>
+                <li class="category-of-plants-filter" id="Indoor">Indoor</li>
+                <li class="category-of-plants-filter" id="Outdoor">Outdoor</li>
+                <li class="category-of-plants-filter" id="Flowering">Flowering</li>
+                <li class="category-of-plants-filter" id="Fruits-bearing">Fruits-bearing</li>
+                <li class="category-of-plants-filter" id="Showcase">Showcase</li>
+            </ul>
+         </details>
+    </div>
+
+    <div class="all">
+        <!-- FILTERS SECTION -->
+    <div class="filter" id="filter">
+        <h1>Filter</h1>
+         <button type="button" class="button for-price-filter" id="for-price-filter-low-to-high">Price- Low to High</button>
+        <button type="button" class="button for-price-filter" id="for-price-filter-high-to-low">Price- High to Low</button>
+        <button type="button" class="button for-rating-filter" id="for-rating-filter">Rating</button>
+    </div>
+
+    <!-- GRID SECTION -->
+    <!-- -1 n r t -->
+    <div class="grid" id="grid">
+        <div class="item Indoor All price plant">
+            <img id="i" src="plant2.jpg" alt="">
+            <span class="name" id="n1">Haworthia truncata Green Rose - Succulent Plant1</span>
+            <span class="in">₹</span><span class="in" id="price">1400</span>
+            <div class="inn"><span>Rating: </span><span id="rating">4.9</span></div>
+            <span class="category">Category: <span class="type" id="t">Indoor</span> Plant</span>
+            <div class="btns">
+                <button class="btn" id="quick">Buy Now!</button>
+                <button class="btn n1 price rating t i" id="cart">Add to Cart</button>      
+            </div>
+        </div>
+        <div class="item Outdoor All price plant">
+            <img src="plant2.jpg" alt="">
+            <span class="name" id="n2">Haworthia truncata Green Rose - Succulent Plant2</span>
+            <span class="in">₹</span><span class="in" id="price">720</span>
+            <div class="inn"><span>Rating: </span><span id="rating">4.0</span></div>
+            <span class="category">Category: <span class="type">Outdoor</span> Plant</span>
+            <div class="btns">
+                <button class="btn" id="quick">Buy Now!</button>
+                <button class="btn n2 price rating t i" id="cart">Add to Cart</button>      
+            </div>
+        </div>
+        <div class="item Indoor All price plant">
+            <img src="plant2.jpg" alt="">
+            <span class="name" id="n3">Haworthia truncata Green Rose - Succulent Plant3</span>
+            <span class="in">₹</span><span class="in" id="price">1000</span>
+            <div class="inn"><span>Rating: </span><span id="rating">2.1</span></div>
+            <span class="category">Category: <span class="type">Indoor</span> Plant</span>
+            <div class="btns">
+                <button class="btn" id="quick">Buy Now!</button>
+                <button class="btn n3 price rating t i" id="cart">Add to Cart</button>      
+            </div>
+        </div>
+        <div class="item Fruits-bearing All price plant">
+            <img src="plant2.jpg" alt="">
+            <span class="name" id="n4">Haworthia truncata Green Rose - Succulent Plant4</span>
+            <span class="in">₹</span><span class="in" id="price">250</span>
+            <div class="inn"><span>Rating: </span><span id="rating">3.8</span></div>
+            <span class="category">Category: <span class="type">Fruits-bearing</span> Plant</span>
+            <div class="btns">
+                <button class="btn" id="quick">Buy Now!</button>
+                <button class="btn n4 price rating t i" id="cart">Add to Cart</button>      
+            </div>
+        </div>
+        <div class="item Fruits-bearing All price plant">
+            <img src="plant2.jpg" alt="">
+            <span class="name" id="n5">Haworthia truncata Green Rose - Succulent Plant5</span>
+            <span class="in">₹</span><span class="in" id="price">960</span>
+            <div class="inn"><span>Rating: </span><span id="rating">4.2</span></div>
+            <span class="category">Category: <span class="type">Fruits-bearing</span> Plant</span>
+            <div class="btns">
+                <button class="btn" id="quick">Buy Now!</button>
+                <button class="btn n5 price rating t i" id="cart">Add to Cart</button>      
+            </div>
+        </div>
+
+    </div>
+    </div>
+    <div class="select">
+
+    </div>
+    <script src="filter.js"></script>
+    <!-- <script src="buy_atc.js"></script> -->
+</body>
+</html>

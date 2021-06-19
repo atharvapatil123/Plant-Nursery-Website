@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Mulish', sans-serif ;
+}
+:root{
+    --primary-color: #4f4f4f;
+}
+p{
+    color: #6c757c;
+}
+a{
+    text-decoration: none;
+    color:var(--primary-color);
+}
+h2{
+    color:var(--primary-color);
+    font-size: 1.5rem;
+}
+.main_cart{
+    background: white;
+}
+.card{
+    border: none;
+}
+.product_img {
+    height: 300px;
+    width: 300px;
+}
+.product_img img{
+    width: 500px;
+    height: 250px;
+    object-fit: cover;
+    margin:auto;
+}
+.product_name{
+    color: black;
+    font-size: 1.6rem;
+    text-transform: capitalize;
+    font-weight: 500;
+    margin-bottom: 70px;
+}
+.card-title p{
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.remove_wish p{
+    font-size: 1.05rem;
+}
+.remove_wish_price{
+    margin-top: 60px;
+}
+.price_money h3{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.price_money{
+    text-align: end;
+}
+.set_quantity{
+    position: relative;
+}
+.set_quantity::after{
+    content: "(Note, 1 piece)";
+    width: auto;
+    height: auto;
+    text-align: center;
+    position: absolute;
+    bottom: -20px;
+    font-size: 0.8rem;
+}
+.page-link{
+    line-height: 16px;
+    width: 45px;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #495057;
+}
+.page-item input{
+    list-style: 25px;
+    padding: 6px;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.page-link:hover{
+    text-decoration: none;
+    color: #495057;
+    outline: none !important;
+}
+.page-link:focus{
+    box-shadow: none;
+}
+.price_indiv p{
+    font-size: 1.1rem;
+    color: rgb(61, 61, 61);
+}
+.total-amt p{
+    color: rgb(61, 61, 61);
+}
+.fa-heart-o:hover{
+    color: red;
+}

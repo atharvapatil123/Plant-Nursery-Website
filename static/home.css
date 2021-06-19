@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Limelight&family=Mate+SC&family=Pattaya&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Squada+One&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+
+/* NAV SECTION */
+nav{
+    display: flex;
+    flex-direction: column;
+    height: 70px;
+    background: rgb(195, 255, 200);
+    box-shadow: -12px -5px 20px 5px rgb(78, 250, 93);
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+ul{
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+    text-decoration: none;
+    list-style: none;
+}
+li{
+    font-family: 'Mate SC', serif;
+    margin:  2px 30px;
+    padding: 3px 1px;
+    font-size: 25px;
+    cursor: pointer;
+    color: black;
+}
+li:hover{
+    color: green;
+}
+#element1{
+    margin-left: 80px;
+}
+ul img{
+    width: 60px;
+    height: 50px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+.buy-donate{
+    display: flex;
+    flex-direction: column;
+    font-size: 22px;
+    color: black;
+    font-weight: 500;
+    margin-top: 20px;
+    overflow: hidden;
+}
+.nav ul li details{
+    background-color: white;
+}
+
+/* CAROUSEL SECTION */
+.carousel-inner .item{
+    height: 700px;
+}
+.logout{
+    position: absolute;
+    right: 40px;
+}
+.carousel-inner .item img{
+    position: absolute;
+    top: 30px;
+    opacity: 0.8;
+}
+.carousel-caption h1, .carousel-caption h3{
+    color: green;
+    margin-bottom: 21px;
+}
+.carousel-caption h1{
+    font-family: 'Limelight', cursive;
+    font-size: 50px;
+    margin-top: 20px;
+}
+.carousel-caption h3{
+    font-family: 'Pattaya', sans-serif;
+    font-size: 40px;
+    margin-bottom: 250px;
+}
+#caption2 h1, #caption2 h3{
+    color: rgb(255, 255, 0);
+}
+#caption3 h1, #caption3 h3{
+    color: rgb(0, 0, 0);
+}
+#caption1 h3:hover{
+    color: rgb(3, 158, 42);
+}
+
+/* INFO SECTION */
+.info{
+    width: 100%;
+    height: 600px;
+    background-color: lightyellow;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 5px;
+}
+.info h1{
+    text-align: center;
+    margin: 0px;
+    padding: 20px;
+    background-color:lightyellow;
+    font-family: 'Squada One', cursive;
+}
+.big{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.big .card{
+    border: 1px solid black;
+    margin: 5px 10px;
+    margin-top: 50px;
+    padding: 5px 12px;
+    height:  370px;
+    width: 250px;
+    background-color:rgb(248, 255, 233);
+    border-radius: 5px;
+    box-shadow: 1px 1px 8px  black;
+    cursor: pointer;
+}
+.big .card:hover{
+    transform: scale(1.005);
+}
+.big img{
+    margin:15px 0px;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* SERVICES SECTION */
+.services{
+    width: 100%;
+    height: 720px;
+}
+.services h1{
+    text-align: center;
+    margin: 0px;
+    padding: 20px;
+    font-family: 'Squada One', cursive;
+}
+.s-outer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+.outer2{
+    margin-top: -65px;
+}
+.s-card img{
+    width: 600px;
+    height: 300px;
+    object-fit:cover;
+    margin: 5px;
+    opacity: 0.8;
+    cursor: pointer;
+    box-shadow: 3px 3px 7px gray;
+}
+.s-card:hover{
+    transform: scale(1.005);
+}
+.s-card p{
+    position: relative;
+    bottom:80px;
+    color: green;
+    left: 20px;
+    font-size: 40px;
+    font-weight: 900;
+    font-family: 'Mate SC', serif;
+    text-decoration: none;
+}
+.inner1{
+    text-decoration: none;
+}
+.inner2 p, .inner4 p{
+    color: white;
+}
+/* FOOTER SECTION */
+.footer{
+    width: 100%;
+    height: 300px;
+    background-color: lightyellow;
+}
+

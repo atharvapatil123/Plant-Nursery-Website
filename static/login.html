@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/8fa13c1d54.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <form id="login">
+        <h1>Login</h1>
+        <div class="contain">
+            <i class="fa fa-envelope-o"></i><input type="text" id="username" autocomplete="off" placeholder="Username">
+        </div>
+        <div class="contain">
+            <i class="fa fa-key"></i><input type="password" id="password" autocomplete="off" placeholder="Password">
+        </div>
+        <button type="submit" class="btn">Login</button>
+        <div class="a">Not registered? Click <a href="/register.html">here</a> to register</div>
+        <div class="a"><a href="/change-password.html">Forgot Password?</a></div>
+    </form>
+
+    <script>
+        const form = document.getElementById('login');
+        form.addEventListener('submit',loginUser);
+        //1. send data as JSON(very common when we use js)
+        //2. send data as urlencoded(very common when we use php)
+        async function loginUser(event){
+            event.preventDefault()
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+           const result = await fetch('/api/login',{
+                method: 'POST',
+                headers:{
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    username,
+                    password
+                })
+            }).then((res)=> res.json())
+            // console.log(result)
+            if(result.status==='ok'){
+                console.log("Got the token", result.data)
+                localStorage.setItem('token',result.data)//stores token in localStorage
+                alert('Success')
+                window.location.href=result.URL;
+            }
+            else if(result.status==='error'){
+                alert(result.error)
+            }
+        }
+    </script>
+</body>
+</html>
