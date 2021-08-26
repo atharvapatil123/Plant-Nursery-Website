@@ -7,9 +7,11 @@ const User = require('./model/user.js')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 var LocalStorage = require('node-localstorage').LocalStorage,
-localStorage = new LocalStorage('./scratch');
+localStorage = LocalStorage('./scratch');
 const passport = require('passport');
+const { authenticate } = require('passport')
 
+console.log(localStorage.getItem('x'));
 const JWT_SECRET = 'fajbgu;ph1rh801yWJLOHQ5469#%@&*@(&#JBAWUJH*()*^*%*&()*)FAEKEBJF64+6598+*/+3034663F1aG'//Must be kept really secret
 
 mongoose.connect('mongodb+srv://Atharva:atharvapatil123@cluster0.ymchp.mongodb.net/User?retryWrites=true&w=majority',{
@@ -18,18 +20,57 @@ mongoose.connect('mongodb+srv://Atharva:atharvapatil123@cluster0.ymchp.mongodb.n
     useCreateIndex: true
 })
 
-app.use('/',express.static(path.join(__dirname,'static')))
+app.use('/static',express.static('static'))
 app.use(bodyParser.json())
-app.use(passport.initialize())
+// app.use(passport.initialize())
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
 
-app.get('/',checkAuthenticated, (req,res)=>{
-    res.render('index.html');
+app.set('views',path.join(__dirname,'views'));
+
+app.get('/',async(req,res)=>{
+    const t = localStorage.getItem('token')
+    console.log(t)
+    try{
+        // const {token} = req.body;
+        const user = jwt.verify(token, JWT_SECRET);
+        const _id = user.id;
+        const u = await User.findOne({ _id }).lean()
+        console.log(token)
+        // return res.json({status:'ok',data:token, URL:'/index'})
+        res.render('index');
+    }
+    catch(error){
+        // res.render('login.html');
+        console.log("here")
+        res.redirect("login.html")
+        // return res.json({status:'error',error:'Passwords do not match',URL:'/login'})
+    }
 })
-app.get('/login',checkNotAuthenticated,(req,res)=>{
-    res.render('login.html');
+app.get('/login.html',(req,res)=>{
+    res.render('login');
 })
-app.get('/register',checkNotAuthenticated,(req,res)=>{
-    res.render('register.html');
+app.get('/register.html',(req,res)=>{
+    res.render('register');
+})
+app.get('/index.html',async(req,res)=>{
+    const token = localStorage.getItem('token')
+    console.log(token)
+    try{
+        // const {token} = req.body;
+        const user = jwt.verify(token, JWT_SECRET);
+        const _id = user.id;
+        const u = await User.findOne({ _id }).lean()
+        console.log(token)
+        // return res.json({status:'ok',data:token, URL:'/index'})
+        res.render('index');
+    }
+    catch(error){
+        // res.render('login.html');
+        console.log("here")
+        res.redirect("login.html")
+        // return res.json({status:'error',error:'Passwords do not match',URL:'/login'})
+    }
 })
 
 app.post('/api/change-password',async (req,res)=>{
@@ -84,7 +125,7 @@ app.post('/api/change-password',async (req,res)=>{
     }
 })
 
-app.post('/api/login',async(req,res)=>{
+app.post('/login',async(req,res)=>{
     const {username, password}= req.body
     // console.log(password)
     const user = await User.findOne({ username }).lean()
@@ -106,7 +147,8 @@ app.post('/api/login',async(req,res)=>{
                 }, 
                 JWT_SECRET
             )//Public information using atob , and btoa
-            return res.json({status:'ok',data:token, URL:'/'})
+            // res.render('index')
+            return res.json({status:'ok',data:token, URL:'index.html'})
         }
         else{
             return res.json({status:'error',error:'Passwords do not match'})
@@ -170,12 +212,22 @@ app.post('/api/register',async(req,res)=>{
     // res.redirect('/login.html')
 })
 
-function checkAuthenticated(req,res, next){//Middleware function, next is used after we r authenticated
-    if(req.isAuthenticated()){
-        return next()
-    }
-
-    res.redirect('/login.html')
+async function checkAuthenticated(req,res){//Middleware function, next is used after we r authenticated
+        try{
+            const {token} = req.body;
+            const user = jwt.verify(token, JWT_SECRET);
+            const _id = user.id;
+            const u = await User.findOne({ _id }).lean()
+            console.log("On Home page")
+            return res.json({status:'ok',data:token, URL:'/index'})
+        // res.render('index.html');
+        }
+        catch(error){
+            // res.render('login.html');
+            // res.render("login")
+            console.log("here")
+            return res.json({status:'error',error:'Passwords do not match',URL:'/login'})
+        }
 }
 function checkNotAuthenticated(req, res, next){
     if(req.isAuthenticated()){
